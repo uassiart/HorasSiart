@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HORAS MENSUALES</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        img {
+            width: 80%;
+            max-width: 200px;
+            margin: 20px 0;
+        }
+        p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 8px;
+        }
+        select, input, button {
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+        select, input {
+            background-color: #fafafa;
+        }
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            font-size: 28px;
+            font-weight: bold;
+            color: #4CAF50;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Horas Mensuales 2025</h1>
+
+            <!-- Texto explicativo -->
+        <p>Regla de negocio para establecer las horas de vuelo mínimas mensuales para cada aeronave</p>
+
+        <form id="form">
+            <label for="x">Selecciona modelo aeronave:</label>
+            <select id="x">
+                <option value="200">Matrice 300 RTK</option>
+                <option value="200">Mavic 3 Enterprise Series</option>
+                <option value="400">Matrice 350 RTK</option>
+                <option value="200">Mavic 2 Enterprise Series </option>
+          
+            </select>
+
+            <label for="y">Cantidad de Packs de batería del equipo:</label>
+            <select id="y">
+                <option value="1">1 Packs</option>
+                <option value="2">2 Packs</option>
+                <option value="3">3 Packs</option>
+                <option value="4">4 Packs</option>
+                <option value="5">5 Packs</option>
+                <option value="6">6 Packs</option>
+                <option value="7">7 Packs</option>
+                <option value="8">8 Packs</option>
+                <option value="9">9 Packs</option>
+                <option value="10">10 Packs</option>
+            </select>
+            
+                    
+            
+            <button type="button" onclick="calcular()">Calcular</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calcular() {
+            // Obtener los valores de las variables x, y, z, w
+            let x = parseFloat(document.getElementById("x").value);
+            let y = parseFloat(document.getElementById("y").value);
+          
+           
+
+          
+
+            // Calcular el resultado de la fórmula
+            let resultado =(((y*x)/2))*(1/60);
+		resultado = resultado.toFixed(1);
+
+            // Mostrar el resultado
+            document.getElementById("result").textContent = "Para el equipo en mencion con "+ y + " packs de baterias, las Horas minimas de vuelo Mensuales son : " + resultado;
+        }
+    </script>
+
+</body>
+</html>
